@@ -1,83 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="900" height="420"
-     viewBox="0 0 900 420"
+     width="1200" height="500"
+     viewBox="0 0 1200 500"
      role="img"
      aria-labelledby="title desc">
 
-  <title id="title">Microlensing Data Trifecta Flow</title>
+  <title id="title">Roman Microlensing Trifecta</title>
   <desc id="desc">
-    Flow diagram showing OGLE, KMTNet, Spitzer, and Roman contributing
-    to microlensing mass determination.
+    Modern flow diagram showing OGLE, KMTNet, Spitzer, and Roman
+    contributing to microlensing mass determination.
   </desc>
 
+  <!-- DEFINITIONS -->
   <defs>
+    <!-- Background -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#0f2a3d"/>
+    </linearGradient>
+
+    <!-- Panel gradients -->
+    <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f0f4f8" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <!-- Shadow -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14"
+                    flood-color="#000"
+                    flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Arrowhead -->
     <marker id="arrowhead"
             markerWidth="10"
             markerHeight="7"
             refX="10"
             refY="3.5"
             orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#3a7bd5"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
     </marker>
   </defs>
 
-  <style>
-    text {
-      font-family: Helvetica, Arial, sans-serif;
-      fill: #0b1c2d;
-    }
-    .box {
-      fill: #e8f2ff;
-      stroke: #3a7bd5;
-      stroke-width: 2;
-      rx: 10;
-    }
-    .arrow {
-      stroke: #3a7bd5;
-      stroke-width: 3;
-      marker-end: url(#arrowhead);
-    }
-    .title {
-      font-size: 16px;
-      font-weight: 700;
-    }
-    .subtitle {
-      font-size: 12px;
-    }
-  </style>
+  <!-- BACKGROUND (THIS FIXES THE CHECKERBOARD) -->
+  <rect width="1200" height="500" fill="url(#bgGrad)"/>
 
-  <!-- OGLE -->
-  <rect class="box" x="40" y="170" width="200" height="80"/>
-  <text class="title" x="140" y="205" text-anchor="middle">OGLE</text>
-  <text class="subtitle" x="140" y="225" text-anchor="middle">
-    Long-baseline light curves
-  </text>
+  <!-- HEADER -->
+  <g transform="translate(60,60)">
+    <text x="0" y="0"
+          font-size="26"
+          font-weight="700"
+          fill="#ffffff"
+          font-family="Inter, Helvetica, Arial, sans-serif">
+      Roman Microlensing Trifecta
+    </text>
+    <text x="0" y="28"
+          font-size="14"
+          fill="#d0e6ff"
+          font-family="Inter, Helvetica, Arial, sans-serif">
+      Historical surveys → parallax → astrometry → mass
+    </text>
+  </g>
 
-  <!-- KMTNet -->
-  <rect class="box" x="270" y="170" width="200" height="80"/>
-  <text class="title" x="370" y="205" text-anchor="middle">KMTNet</text>
-  <text class="subtitle" x="370" y="225" text-anchor="middle">
-    High-cadence coverage
-  </text>
+  <!-- BOXES -->
+  <g transform="translate(80,180)"
+     font-family="Inter, Helvetica, Arial, sans-serif"
+     fill="#000000">
 
-  <!-- Spitzer -->
-  <rect class="box" x="500" y="170" width="200" height="80"/>
-  <text class="title" x="600" y="205" text-anchor="middle">Spitzer</text>
-  <text class="subtitle" x="600" y="225" text-anchor="middle">
-    Parallax baseline
-  </text>
+    <!-- OGLE -->
+    <rect x="0" y="0" width="240" height="110" rx="18"
+          fill="url(#boxGrad)" filter="url(#softShadow)"/>
+    <text x="120" y="44" text-anchor="middle"
+          font-size="18" font-weight="700">
+      OGLE
+    </text>
+    <text x="120" y="72" text-anchor="middle"
+          font-size="13">
+      Long-baseline light curves
+    </text>
 
-  <!-- Roman -->
-  <rect class="box" x="730" y="170" width="150" height="80"/>
-  <text class="title" x="805" y="205" text-anchor="middle">Roman</text>
-  <text class="subtitle" x="805" y="225" text-anchor="middle">
-    Astrometry → Mass
-  </text>
+    <!-- Arrow -->
+    <line x1="240" y1="55" x2="300" y2="55"
+          stroke="#ffffff" stroke-width="4"
+          marker-end="url(#arrowhead)"/>
 
-  <!-- Arrows -->
-  <line class="arrow" x1="240" y1="210" x2="270" y2="210"/>
-  <line class="arrow" x1="470" y1="210" x2="500" y2="210"/>
-  <line class="arrow" x1="700" y1="210" x2="730" y2="210"/>
+    <!-- KMTNet -->
+    <rect x="300" y="0" width="240" height="110" rx="18"
+          fill="url(#boxGrad)" filter="url(#softShadow)"/>
+    <text x="420" y="44" text-anchor="middle"
+          font-size="18" font-weight="700">
+      KMTNet
+    </text>
+    <text x="420" y="72" text-anchor="middle"
+          font-size="13">
+      High-cadence coverage
+    </text>
+
+    <!-- Arrow -->
+    <line x1="540" y1="55" x2="600" y2="55"
+          stroke="#ffffff" stroke-width="4"
+          marker-end="url(#arrowhead)"/>
+
+    <!-- Spitzer -->
+    <rect x="600" y="0" width="240" height="110" rx="18"
+          fill="url(#boxGrad)" filter="url(#softShadow)"/>
+    <text x="720" y="44" text-anchor="middle"
+          font-size="18" font-weight="700">
+      Spitzer
+    </text>
+    <text x="720" y="72" text-anchor="middle"
+          font-size="13">
+      Space-based parallax
+    </text>
+
+    <!-- Arrow -->
+    <line x1="840" y1="55" x2="900" y2="55"
+          stroke="#ffffff" stroke-width="4"
+          marker-end="url(#arrowhead)"/>
+
+    <!-- Roman -->
+    <rect x="900" y="0" width="220" height="110" rx="18"
+          fill="url(#boxGrad)" filter="url(#softShadow)"/>
+    <text x="1010" y="44" text-anchor="middle"
+          font-size="18" font-weight="700">
+      Roman
+    </text>
+    <text x="1010" y="72" text-anchor="middle"
+          font-size="13">
+      Astrometry → mass
+    </text>
+
+  </g>
 
 </svg>
