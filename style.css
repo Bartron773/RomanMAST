@@ -1,1 +1,27 @@
 
+---
+
+## 🎨 Minimal CSS (optional, but makes it pop)
+
+```css
+body {
+  font-family: system-ui, sans-serif;
+  background: #0b0f1a;
+  color: #eaeaf0;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  color: #7fd3ff;
+}
+
+.diagram {
+  background: #12182b;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-left: 4px solid #7fd3ff;
+  font-family: monospace;
+  white-space: pre;
+}
