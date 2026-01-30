@@ -49,6 +49,9 @@ Without these inputs, Roman risks rediscovering candidates **without the ability
 They are active components of discovery.**
 
 ---
+## Data Products Overview
+
+Each proposed dataset would be delivered as a High-Level Science Product (HLSP) consisting of a primary catalog (FITS binary table or compressed CSV), machine-readable metadata schema (YAML/JSON), and a concise README describing provenance, column definitions, and usage examples. All products are derived from publicly available survey data and comply with original survey acknowledgement requirements.
 
 ## The Trifecta: Three Complementary Datasets
 
@@ -133,7 +136,8 @@ This trifecta proposal was assembled by **two members of the public**—not as o
 We believe that:
 - **Space science belongs to everyone**  
 - **Good data organization accelerates discovery**  
-- **Flagship missions are strongest when communities are included early**  
+- **Flagship missions are strongest when communities are included early**
+- **All derived catalogs will include explicit provenance tracking and required acknowledgements for OGLE, KMTNet, Spitzer, and Gaia, ensuring proper credit and compliance with original data policies**
 
 These submissions are a small but concrete example of that philosophy in action.
 
@@ -145,7 +149,7 @@ Some discoveries don’t happen because we look harder.
 
 **They happen because we connect what we already have.**
 
-This trifecta is about making those connections—so Roman can turn fleeting lensing events into a **lasting census of the invisible universe**.
+This trifecta is about making those connections—so Roman can turn fleeting lensing events into a **lasting census of the invisible universe**. Upon community interest or archive approval, these HLSPs can be incrementally expanded with validation notebooks and Roman-era updates without disrupting initial ingestion.
 
 
 ## License
