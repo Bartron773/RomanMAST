@@ -1,35 +1,133 @@
-<svg width="900" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    text { font-family: Helvetica, Arial, sans-serif; fill: #0b1c2d; }
-    .box { fill: #e8f2ff; stroke: #3a7bd5; stroke-width: 2; rx: 10; }
-    .arrow { stroke: #3a7bd5; stroke-width: 3; marker-end: url(#arrowhead); }
-  </style>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Trifecta Microlensing Flow (modernized)</title>
+  <desc id="desc">Stylized flow diagram showing three interconnected steps for microlensing analysis with gradient background, iconography, and clear labels.</desc>
 
+  <!-- Background gradient -->
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7"
-      refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#3a7bd5"/>
-    </marker>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071029" />
+      <stop offset="45%" stop-color="#0b2740" />
+      <stop offset="100%" stop-color="#092b2f" />
+    </linearGradient>
+
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="panelGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#5b21b6" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="panelGrad3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.95" />
+    </linearGradient>
+
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </feMerge>
+    <style type="text/css"><![CDATA[
+      .label { font: 700 20px/1.1 'Inter', 'Helvetica Neue', Arial; fill: #e6f6f6; }
+      .sub { font: 500 14px/1.2 'Inter', Arial; fill: rgba(230,246,246,0.9); }
+      .panel-title { font: 800 22px 'Inter', Arial; fill: #04212a; }
+      .icon { fill: rgba(4,9,13,0.12); }
+    ]]></style>
   </defs>
 
-  <rect class="box" x="40" y="170" width="200" height="80"/>
-  <text x="140" y="205" text-anchor="middle" font-size="16">OGLE</text>
-  <text x="140" y="225" text-anchor="middle" font-size="12">Long-baseline light curves</text>
+  <!-- Background -->
+  <rect width="1200" height="640" fill="url(#bgGrad)" />
 
-  <rect class="box" x="270" y="170" width="200" height="80"/>
-  <text x="370" y="205" text-anchor="middle" font-size="16">KMTNet</text>
-  <text x="370" y="225" text-anchor="middle" font-size="12">High-cadence coverage</text>
+  <!-- Decorative constellation lines -->
+  <g opacity="0.12" stroke="#88f0e6" stroke-width="1.2" stroke-linecap="round">
+    <path d="M60,120 C220,40 420,80 620,40" />
+    <path d="M580,540 C760,460 920,520 1100,440" />
+    <path d="M140,420 C300,360 460,420 620,360" />
+  </g>
 
-  <rect class="box" x="500" y="170" width="200" height="80"/>
-  <text x="600" y="205" text-anchor="middle" font-size="16">Spitzer</text>
-  <text x="600" y="225" text-anchor="middle" font-size="12">Parallax baseline</text>
+  <!-- Flow header -->
+  <g transform="translate(48,32)">
+    <text x="0" y="0" class="label">Trifecta Microlensing Flow</text>
+    <text x="0" y="30" class="sub">Modernized diagram: data → model → validation</text>
+  </g>
 
-  <rect class="box" x="730" y="170" width="150" height="80"/>
-  <text x="805" y="205" text-anchor="middle" font-size="16">Roman</text>
-  <text x="805" y="225" text-anchor="middle" font-size="12">Astrometry → Mass</text>
+  <!-- Panels/container -->
+  <g transform="translate(72,120)">
+    <!-- Panel 1 -->
+    <g transform="translate(0,0)">
+      <rect width="320" height="320" rx="24" ry="24" fill="url(#panelGrad)" filter="url(#softShadow)" />
+      <!-- icon: data -->
+      <g transform="translate(36,36)" aria-hidden="true">
+        <rect x="0" y="0" width="80" height="56" rx="8" fill="#ffffff" opacity="0.14" />
+        <rect x="12" y="16" width="56" height="6" rx="3" fill="#04212a" opacity="0.16" />
+        <rect x="12" y="30" width="36" height="6" rx="3" fill="#04212a" opacity="0.12" />
+      </g>
+      <text x="36" y="150" class="panel-title">Survey & Lightcurves</text>
+      <text x="36" y="178" class="sub">Detect events, extract photometry</text>
+    </g>
 
-  <line class="arrow" x1="240" y1="210" x2="270" y2="210"/>
-  <line class="arrow" x1="470" y1="210" x2="500" y2="210"/>
-  <line class="arrow" x1="700" y1="210" x2="730" y2="210"/>
+    <!-- Connector 1 -->
+    <g transform="translate(352,120)" aria-hidden="true">
+      <path d="M-40,40 C-20,40 0,40 20,40" stroke="#9ff0e6" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9" />
+      <polygon points="28,40 20,34 20,46" fill="#9ff0e6" opacity="0.95" />
+    </g>
+
+    <!-- Panel 2 -->
+    <g transform="translate(432,0)">
+      <rect width="320" height="320" rx="24" ry="24" fill="url(#panelGrad2)" filter="url(#softShadow)" />
+      <!-- icon: model -->
+      <g transform="translate(36,36)" aria-hidden="true">
+        <circle cx="44" cy="28" r="22" fill="#ffffff" opacity="0.12" />
+        <path d="M26,34 C44,18 62,34 44,44 C26,54 10,40 26,34 Z" fill="#04212a" opacity="0.12" />
+      </g>
+      <text x="36" y="150" class="panel-title">Lens Modeling</text>
+      <text x="36" y="178" class="sub">Fit microlensing parameters & uncertainties</text>
+    </g>
+
+    <!-- Connector 2 -->
+    <g transform="translate(784,120)" aria-hidden="true">
+      <path d="M-40,40 C-20,40 0,40 20,40" stroke="#caa3ff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.9" />
+      <polygon points="28,40 20,34 20,46" fill="#caa3ff" opacity="0.95" />
+    </g>
+
+    <!-- Panel 3 -->
+    <g transform="translate(864,0)">
+      <rect width="320" height="320" rx="24" ry="24" fill="url(#panelGrad3)" filter="url(#softShadow)" />
+      <!-- icon: validation -->
+      <g transform="translate(36,36)" aria-hidden="true">
+        <rect x="8" y="8" width="72" height="72" rx="12" fill="#ffffff" opacity="0.12" />
+        <polyline points="22,60 38,74 70,30" stroke="#04212a" stroke-width="6" fill="none" opacity="0.14" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <text x="36" y="150" class="panel-title">Validation & Triage</text>
+      <text x="36" y="178" class="sub">Quality checks, classification, & follow-up</text>
+    </g>
+
+    <!-- Decorative central arc connecting panels -->
+    <g transform="translate(160,320)" opacity="0.18">
+      <path d="M0,0 C160,60 480,60 640,0" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" />
+    </g>
+
+    <!-- Small labels under panels -->
+    <g transform="translate(0,360)">
+      <text x="36" y="12" class="sub">1. Ingest</text>
+      <text x="468" y="12" class="sub">2. Model</text>
+      <text x="900" y="12" class="sub">3. Verify</text>
+    </g>
+
+  </g>
+
+  <!-- Footer credit -->
+  <g transform="translate(72,596)">
+    <text x="0" y="0" class="sub">Made with RomanMAST • Updated by Bartron773 on 2026-01-30</text>
+  </g>
 </svg>
-
