@@ -1,31 +1,127 @@
-<svg width="900" height="240" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    text { font-family: Helvetica, Arial, sans-serif; }
-    .step { fill: #f5faff; stroke: #5b9bd5; stroke-width: 2; rx: 8; }
-    .arrow { stroke: #5b9bd5; stroke-width: 2; marker-end: url(#a); }
-  </style>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700" role="img" aria-labelledby="title desc">
+  <title id="title">Microlensing Pipeline</title>
+  <desc id="desc">Polished infographic style header for the microlensing pipeline with gradient background, card, icons and title.</desc>
 
+  <!-- Definitions: gradients, drop shadow -->
   <defs>
-    <marker id="a" markerWidth="10" markerHeight="7"
-      refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#5b9bd5"/>
-    </marker>
+    <radialGradient id="bgGrad" cx="30%" cy="20%" r="100%">
+      <stop offset="0%" stop-color="#0f1724" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#0b2133" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#071523" stop-opacity="1"/>
+    </radialGradient>
+
+    <linearGradient id="cardGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#f6fbff" stop-opacity="0.96"/>
+    </linearGradient>
+
+    <filter id="cardShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0a1620" flood-opacity="0.25"/>
+    </filter>
+
+    <filter id="iconShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+
+    <mask id="softEdge">
+      <rect x="0" y="0" width="100%" height="100%" rx="18" fill="white"/>
+    </mask>
+
+    <style type="text/css"><![CDATA[
+      .title { font: 700 36px/1.1 "Segoe UI", Roboto, Arial, sans-serif; fill: #022936; }
+      .subtitle { font: 400 16px/1.2 "Segoe UI", Roboto, Arial, sans-serif; fill: #274c57; opacity: 0.95; }
+      .muted { fill: #6e9aa3; font-size: 13px; }
+      .chip { font: 600 13px/1 "Segoe UI", Roboto, Arial, sans-serif; fill: #034e5a; }
+    ]]></style>
   </defs>
 
-  <rect class="step" x="30" y="80" width="160" height="60"/>
-  <text x="110" y="115" text-anchor="middle">Survey Detection</text>
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
 
-  <rect class="step" x="220" y="80" width="200" height="60"/>
-  <text x="320" y="115" text-anchor="middle">Candidate Filtering</text>
+  <!-- Faint decorative star/particle field for depth -->
+  <g fill="#ffffff" opacity="0.06">
+    <circle cx="1200" cy="80" r="2"/>
+    <circle cx="1150" cy="160" r="1.5"/>
+    <circle cx="1050" cy="60" r="1"/>
+    <circle cx="300" cy="120" r="1.5"/>
+    <circle cx="420" cy="40" r="1"/>
+    <circle cx="880" cy="200" r="1.2"/>
+  </g>
 
-  <rect class="step" x="460" y="80" width="200" height="60"/>
-  <text x="560" y="115" text-anchor="middle">Cross‑Mission Context</text>
+  <!-- Center card -->
+  <g transform="translate(80,80)">
+    <rect x="0" y="0" width="1240" height="540" rx="20" fill="url(#cardGrad)" filter="url(#cardShadow)" mask="url(#softEdge)"/>
 
-  <rect class="step" x="700" y="80" width="170" height="60"/>
-  <text x="785" y="115" text-anchor="middle">Mass Confirmation</text>
+    <!-- left column: icons + caption -->
+    <g transform="translate(40,36)">
+      <!-- telescope icon (simple) -->
+      <g transform="translate(20,10) scale(1.2)" filter="url(#iconShadow)" aria-hidden="true">
+        <rect x="0" y="62" width="120" height="10" rx="5" fill="#e6f7fb"/>
+        <rect x="84" y="10" width="14" height="60" rx="4" transform="rotate(-28 91 40)" fill="#0b4b56"/>
+        <circle cx="34" cy="32" r="26" fill="#0fb1c0"/>
+        <circle cx="34" cy="32" r="20" fill="#0b7a84"/>
+        <rect x="14" y="78" width="44" height="8" rx="3" fill="#0b4b56"/>
+      </g>
 
-  <line class="arrow" x1="190" y1="110" x2="220" y2="110"/>
-  <line class="arrow" x1="420" y1="110" x2="460" y2="110"/>
-  <line class="arrow" x1="660" y1="110" x2="700" y2="110"/>
-</svg>
+      <!-- title + subtitle -->
+      <text x="170" y="30" class="title">Microlensing Pipeline</text>
+      <text x="170" y="66" class="subtitle">Roman MAST — automated light-curve processing, candidate identification, and data products</text>
 
+      <!-- chips / metadata -->
+      <g transform="translate(170,84)" aria-hidden="true">
+        <rect x="0" y="0" width="110" height="30" rx="8" fill="#e7fbfd"/>
+        <text x="14" y="20" class="chip">v1.0 • 2026</text>
+
+        <rect x="130" y="0" width="170" height="30" rx="8" fill="#eef6f8"/>
+        <text x="144" y="20" class="muted">Pipeline: cadence → detection → vetting</text>
+      </g>
+
+      <!-- short bullet list -->
+      <g transform="translate(0,140)" fill="#163f45" font-family="Segoe UI, Roboto, Arial, sans-serif">
+        <text x="0" y="0" class="muted" style="font-weight:700; font-size:14px;">Highlights</text>
+        <text x="0" y="30" class="muted">• Automatic difference imaging & photometry</text>
+        <text x="0" y="54" class="muted">• Bayesian modeling & ranking of events</text>
+        <text x="0" y="78" class="muted">• Ready-to-publish MAST products</text>
+      </g>
+    </g>
+
+    <!-- right column: sample microlensing light curve card -->
+    <g transform="translate(720,56)">
+      <rect x="0" y="0" width="420" height="420" rx="14" fill="#f8fdff" stroke="#e6f1f3" stroke-width="1"/>
+      <!-- small chart background -->
+      <rect x="24" y="24" width="372" height="260" rx="8" fill="#0b2b33" opacity="0.06"/>
+
+      <!-- axes -->
+      <g transform="translate(32,36)">
+        <rect x="0" y="0" width="340" height="220" fill="transparent"/>
+
+        <!-- grid -->
+        <g stroke="#ffffff" stroke-opacity="0.06">
+          <line x1="0" x2="340" y1="44" y2="44"/>
+          <line x1="0" x2="340" y1="88" y2="88"/>
+          <line x1="0" x2="340" y1="132" y2="132"/>
+          <line x1="0" x2="340" y1="176" y2="176"/>
+        </g>
+
+        <!-- microlensing-like light curve -->
+        <path d="M6 176 
+                 C40 120, 80 60, 130 40 
+                 C180 28, 230 46, 270 88
+                 C300 120, 330 148, 340 160" 
+              fill="none" stroke="#ffb84d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- scatter points -->
+        <g fill="#fff">
+          <circle cx="22" cy="172" r="3.5" fill="#ffffff" opacity="0.9"/>
+          <circle cx="68" cy="138" r="3.8" fill="#ffffff" opacity="0.9"/>
+          <circle cx="120" cy="84" r="4.4" fill="#ffffff" opacity="0.95"/>
+          <circle cx="170" cy="72" r="4.6" fill="#ffffff" opacity="0.95"/>
+          <circle cx="230" cy="94" r="4.2" fill="#ffffff" opacity="0.95"/>
+          <circle cx="290" cy="122" r="3.8" fill="#ffffff" opacity="0.9"/>
+          <circle cx="332" cy="152" r="3.5" fill="#ffffff" opacity="0.9"/>
+        </g>
+
+        <!-- small x/y labels -->
+        <text x="0" y="236" class="muted">Time</text>
+        <text x="-18" y="12" class="muted" transform="rotate(-90 -18,
