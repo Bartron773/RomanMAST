@@ -1,7 +1,3 @@
----
-title: Roman Microlensing Trifecta
----
-
 # The Roman Microlensing Trifecta
 ### Connecting Data to Find Invisible Objects
 
