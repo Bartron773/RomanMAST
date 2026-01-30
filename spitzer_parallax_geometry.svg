@@ -1,33 +1,95 @@
-<svg width="800" height="360" viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    text { font-family: Helvetica, Arial, sans-serif; fill: #1a1a1a; }
-    .orbit { stroke: #999; stroke-dasharray: 5,5; fill: none; }
-    .arrow { stroke: #d33; stroke-width: 2; marker-end: url(#arrow); }
-  </style>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" role="img" aria-label="Spitzer parallax geometry">
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="7"
-      refX="10" refY="3.5" orient="auto">
+    <linearGradient id="sunGradient" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff7cc"/>
+      <stop offset="1" stop-color="#ffd24a"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#d33"/>
     </marker>
   </defs>
 
-  <circle cx="200" cy="180" r="60" fill="#ffe082"/>
-  <text x="200" y="185" text-anchor="middle">Sun</text>
+  <style>
+    svg { font-family: "Helvetica Neue", Arial, sans-serif; }
+    .label { fill: #1a1a1a; font-size: 13px; }
+    .small { font-size: 11px; fill: #333; }
+    .orbit { stroke: #9aa5b1; stroke-dasharray: 6 6; fill: none; stroke-width: 1.2; }
+    .orbit-outer { stroke: #b9c3cc; stroke-dasharray: 4 6; stroke-width: 1; }
+    .body { stroke: none; filter: url(#softShadow); }
+    .line { stroke: #d33; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .line-ghost { stroke: #6c6c6c; stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.65; }
+    .angle-arc { stroke: #d33; stroke-width: 1.2; fill: none; stroke-dasharray: 2 2; }
+    .legend { fill: #222; font-size: 12px; }
+  </style>
 
+  <!-- Background panel -->
+  <rect x="0" y="0" width="800" height="360" fill="#ffffff"/>
+
+  <!-- Sun -->
+  <g transform="translate(200,180)">
+    <circle r="62" fill="url(#sunGradient)" class="body"/>
+    <circle r="62" fill="none" stroke="#f2b300" stroke-width="1"/>
+    <text x="0" y="6" text-anchor="middle" class="label" font-weight="700">Sun</text>
+  </g>
+
+  <!-- Orbits -->
   <ellipse class="orbit" cx="200" cy="180" rx="140" ry="90"/>
-  <ellipse class="orbit" cx="200" cy="180" rx="200" ry="130"/>
+  <ellipse class="orbit-outer" cx="200" cy="180" rx="200" ry="130"/>
 
-  <circle cx="340" cy="180" r="10" fill="#4caf50"/>
-  <text x="340" y="205" text-anchor="middle" font-size="12">Earth</text>
+  <!-- Earth -->
+  <g transform="translate(340,180)">
+    <circle r="10" fill="#4caf50" class="body"/>
+    <text x="0" y="28" text-anchor="middle" class="small">Earth</text>
+  </g>
 
-  <circle cx="400" cy="120" r="10" fill="#2196f3"/>
-  <text x="400" y="95" text-anchor="middle" font-size="12">Spitzer</text>
+  <!-- Spitzer -->
+  <g transform="translate(400,120)">
+    <circle r="10" fill="#2196f3" class="body"/>
+    <text x="0" y="-16" text-anchor="middle" class="small">Spitzer</text>
+  </g>
 
-  <line class="arrow" x1="340" y1="180" x2="600" y2="180"/>
-  <line class="arrow" x1="400" y1="120" x2="600" y2="180"/>
+  <!-- Lens (source) -->
+  <g transform="translate(600,180)">
+    <circle r="6" fill="#111111"/>
+    <text x="0" y="26" text-anchor="middle" class="small">Lens (source)</text>
+  </g>
 
-  <circle cx="600" cy="180" r="6" fill="#000"/>
-  <text x="600" y="205" text-anchor="middle" font-size="12">Lens</text>
+  <!-- Lines to lens -->
+  <line x1="340" y1="180" x2="600" y2="180" class="line-ghost"/>
+  <line x1="400" y1="120" x2="600" y2="180" class="line"/>
+  <line x1="340" y1="180" x2="400" y2="120" class="line-ghost" stroke="#888" stroke-width="1.2" marker-end=""/>
+
+  <!-- Parallax angle arc at lens: angle between Earth-lens and Spitzer-lens -->
+  <!-- compute approximate arc centered at lens (600,180) from vectors to Earth (340,180) and Spitzer (400,120) -->
+  <path d="M 540 180 A 60 60 0 0 1 518 132" class="angle-arc"/>
+  <text x="548" y="156" class="small" fill="#d33">π_E</text>
+
+  <!-- Annotations for baseline -->
+  <line x1="340" y1="220" x2="400" y2="220" stroke="#b0b0b0" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="370" y="240" text-anchor="middle" class="small">Projected baseline</text>
+
+  <!-- Legend -->
+  <g transform="translate(22,22)" class="legend">
+    <rect x="0" y="0" width="180" height="92" rx="6" fill="#fafafa" stroke="#e6e6e6"/>
+    <g transform="translate(12,14)">
+      <circle cx="8" cy="6" r="6" fill="#ffd24a" stroke="#f2b300"/>
+      <text x="22" y="10" class="">Sun</text>
+    </g>
+    <g transform="translate(12,36)">
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#4caf50"/>
+      <text x="22" y="10" class="">Earth (ground observatory)</text>
+    </g>
+    <g transform="translate(12,56)">
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#2196f3"/>
+      <text x="22" y="10" class="">Spitzer (satellite)</text>
+    </g>
+  </g>
+
+  <!-- Caption -->
+  <text x="400" y="345" text-anchor="middle" class="small">Parallax geometry: positions of Earth and Spitzer create an offset in apparent lens position; angle π_E denotes the microlensing parallax.</text>
 </svg>
-
