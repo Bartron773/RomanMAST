@@ -1,54 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="640"
+     viewBox="0 0 1200 640"
+     role="img"
+     aria-labelledby="title desc">
+
   <title id="title">Trifecta Microlensing Flow (modernized)</title>
-  <desc id="desc">Stylized flow diagram showing three interconnected steps for microlensing analysis with gradient background, iconography, and clear labels.</desc>
+  <desc id="desc">
+    Stylized flow diagram showing three interconnected steps for microlensing analysis
+    with gradient background, iconography, and clear labels.
+  </desc>
 
-<defs>
+  <!-- ===================== -->
+  <!-- Definitions only here -->
+  <!-- ===================== -->
+  <defs>
 
-  <!-- Background gradient -->
-  <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#071029"/>
-    <stop offset="45%" stop-color="#0b2740"/>
-    <stop offset="100%" stop-color="#092b2f"/>
-  </linearGradient>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#071029"/>
+      <stop offset="45%" stop-color="#0b2740"/>
+      <stop offset="100%" stop-color="#092b2f"/>
+    </linearGradient>
 
-  <!-- Panel gradients -->
-  <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.95"/>
-    <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.95"/>
-  </linearGradient>
+    <!-- Panel gradients -->
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.95"/>
+    </linearGradient>
 
-  <linearGradient id="panelGrad2" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.95"/>
-    <stop offset="100%" stop-color="#5b21b6" stop-opacity="0.95"/>
-  </linearGradient>
+    <linearGradient id="panelGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#5b21b6" stop-opacity="0.95"/>
+    </linearGradient>
 
-  <linearGradient id="panelGrad3" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#f97316" stop-opacity="0.95"/>
-    <stop offset="100%" stop-color="#ef4444" stop-opacity="0.95"/>
-  </linearGradient>
+    <linearGradient id="panelGrad3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.95"/>
+    </linearGradient>
 
-  <!-- Filters -->
-  <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
-    <feDropShadow dx="0" dy="8" stdDeviation="18"
-                  flood-color="#000"
-                  flood-opacity="0.35"/>
-  </filter>
+    <!-- Filters -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18"
+                    flood-color="#000"
+                    flood-opacity="0.35"/>
+    </filter>
 
-  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="6" result="b"/>
-    <feMerge>
-      <feMergeNode in="b"/>
-      <feMergeNode in="SourceGraphic"/>
-    </feMerge>
-  </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
 
-  <!-- Styles -->
-  <style type="text/css"><![CDATA[
-    .label { font: 700 20px/1.1 'Inter','Helvetica Neue',Arial; fill:#e6f6f6; }
-    .sub { font: 500 14px/1.2 'Inter',Arial; fill: rgba(230,246,246,0.9); }
-    .panel-title { font: 800 22px 'Inter',Arial; fill:#04212a; }
-    .icon { fill: rgba(4,9,13,0.12); }
-  ]]></style>
+    <!-- Styles -->
+    <style type="text/css"><![CDATA[
+      .label {
+        font: 700 20px/1.1 'Inter','Helvetica Neue',Arial;
+        fill: #e6f6f6;
+      }
+      .sub {
+        font: 500 14px/1.2 'Inter',Arial;
+        fill: rgba(230,246,246,0.9);
+      }
+      .panel-title {
+        font: 800 22px 'Inter',Arial;
+        fill: #04212a;
+      }
+      .icon {
+        fill: rgba(4,9,13,0.12);
+      }
+    ]]></style>
 
-  <!-- Decorative central arc connecting panels --> <g transform="translate(160,320)" opacity="0.18"> <path d="M0,0 C160,60 480,60 640,0" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" /> </g> <!-- Small labels under panels --> <g transform="translate(0,360)"> <text x="36" y="12" class="sub">1. Ingest</text> <text x="468" y="12" class="sub">2. Model</text> <text x="900" y="12" class="sub">3. Verify</text> </g> </g> <!-- Footer credit --> <g transform="translate(72,596)"> <text x="0" y="0" class="sub">Made with RomanMAST • Updated by Bartron773 on 2026-01-30</text> </g>
+  </defs>
+
+  <!-- ===================== -->
+  <!-- Rendered content -->
+  <!-- ===================== -->
+
+  <!-- Background -->
+  <rect width="1200" height="640" fill="url(#bgGrad)"/>
+
+  <!-- Decorative central arc -->
+  <g transform="translate(160,320)" opacity="0.18">
+    <path d="M0,0 C160,60 480,60 640,0"
+          stroke="#ffffff"
+          stroke-width="2"
+          fill="none"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- Small labels under panels -->
+  <g transform="translate(72,480)">
+    <text x="36"  y="12" class="sub">1. Ingest</text>
+    <text x="468" y="12" class="sub">2. Model</text>
+    <text x="900" y="12" class="sub">3. Verify</text>
+  </g>
+
+  <!-- Footer credit -->
+  <g transform="translate(72,596)">
+    <text class="sub">
+      Made with RomanMAST • Updated by Bartron773 on 2026-01-30
+    </text>
+  </g>
+
+</svg>
