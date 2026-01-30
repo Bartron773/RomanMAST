@@ -1,0 +1,3 @@
+event_id,ra_deg,dec_deg,roman_field_id,overlap_flag
+OGLE-2011-BLG-0462,266.92,-29.41,GBTDS-BULGE-01,YES
+OGLE-2016-BLG-1195,267.31,-28.87,GBTDS-BULGE-04,YES

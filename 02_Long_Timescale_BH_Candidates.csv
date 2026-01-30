@@ -1,0 +1,6 @@
+event_id,t_E_days,parallax_status,lens_class_prediction,mass_est_solar
+OGLE-2011-BLG-0462,270,Spitzer_Baseline,Isolated_BH,7.1
+MACHO-99-BLG-22,340,Spitzer_Baseline,Isolated_BH,7.5
+OGLE-2015-BLG-1285,147,Spitzer_Parallax,Neutron_Star_or_BH,1.35
+OGLE-2018-BLG-0483,185,Spitzer_Parallax,Dark_Remnant,4.65
+

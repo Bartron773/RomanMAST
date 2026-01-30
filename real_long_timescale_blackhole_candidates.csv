@@ -1,0 +1,5 @@
+event_id,survey,t_E_days,inferred_mass_solar,lens_type_candidate,has_astrometry,reference
+OGLE-2011-BLG-0462,OGLE,270,7.1,Isolated Black Hole,True,Lam et al. 2022
+OGLE-2007-BLG-224,OGLE,106,18.0,Neutron Star,True,Gould et al. 2009
+OGLE-2015-BLG-1285,OGLE,147,2.3,Neutron Star,False,Wyrzykowski et al. 2016
+MOA-2011-BLG-191,MOA,210,5.0,Black Hole Candidate,False,Sumi et al. 2011
