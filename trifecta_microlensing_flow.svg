@@ -36,7 +36,7 @@
         <feMergeNode in="b" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
-    </feMerge>
+    </filter>
     <style type="text/css"><![CDATA[
       .label { font: 700 20px/1.1 'Inter', 'Helvetica Neue', Arial; fill: #e6f6f6; }
       .sub { font: 500 14px/1.2 'Inter', Arial; fill: rgba(230,246,246,0.9); }
