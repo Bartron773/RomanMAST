@@ -1,3 +1,10 @@
+<!--
+Microlensing Pipeline Diagram
+Roman Microlensing Trifecta Project
+Bart Salazar & Brad Devowe (Community Contributors)
+License: CC-BY 4.0
+-->
+
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360" role="img" aria-label="Spitzer parallax geometry">
   <defs>
     <linearGradient id="sunGradient" x1="0" x2="1">
