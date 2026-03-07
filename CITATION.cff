@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: RomanMAST: Microlensing Dataset Infrastructure for Roman
+authors:
+  - family-names: Salazar
+    given-names: Bartolo
+  - family-names: Devowe
+    given-names: Brad
+date-released: 2026
+repository-code: https://github.com/Bartron773/RomanMAST
+license: MIT
