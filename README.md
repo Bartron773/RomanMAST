@@ -53,6 +53,9 @@ They are active components of discovery.**
 ## The Trifecta: Three Complementary Datasets
 
 ### 1. OGLE–Gaia Long‑Timescale Microlensing Seed Catalog  
+
+![Microlensing Pipeline](figures/microlensing_pipeline.svg)
+
 **Role:** Candidate identification and astrometric context  
 
 **Contribution:**
@@ -65,6 +68,9 @@ This dataset narrows Roman’s search space to the most physically informative e
 ---
 
 ### 2. Spitzer Microlens Parallax Catalog  
+
+![Spitzer Parallax Geometry](figures/spitzer_parallax_geometry.svg)
+
 **Role:** Mass degeneracy breaking  
 
 **Contribution:**
@@ -77,6 +83,9 @@ This dataset transforms Roman astrometry into **definitive mass measurements**.
 ---
 
 ### 3. OGLE–KMTNet Trifecta Light‑Curve Catalog  
+
+![Trifecta Microlensing Flow](figures/trifecta_microlensing_flow.svg)
+
 **Role:** Temporal completeness and anomaly recovery  
 
 **Contribution:**
