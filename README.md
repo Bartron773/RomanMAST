@@ -1,163 +1,47 @@
-# The Roman Microlensing Trifecta  
-## Building Discovery Infrastructure for Invisible Objects  
+# The Roman Microlensing Trifecta
+## Building Discovery Infrastructure for Invisible Objects
 
 **Bart Salazar & Brad Devowe**  
-*Community contributors to Roman‑era science infrastructure*
-
----
+*Community contributors to Roman-era science infrastructure*
 
 ## Executive Summary
 
-The **Nancy Grace Roman Space Telescope** will transform time‑domain astronomy in the Galactic bulge, enabling the first large‑scale census of isolated stellar remnants—**black holes, neutron stars, and free‑floating planets**—through microlensing and astrometric measurements.
+The **Nancy Grace Roman Space Telescope** will transform time-domain astronomy in the Galactic bulge, enabling a large-scale census of isolated stellar remnants—including black holes, neutron stars, and free-floating planets—through microlensing and astrometric measurements.
 
-However, Roman cannot achieve this goal in isolation.
+This project argues that three carefully curated historical datasets, ingested into the **Mikulski Archive for Space Telescopes (MAST)**, could provide the temporal, astrometric, and parallax context Roman needs to convert detections into stronger physical measurements.
 
-This white paper argues that **three small, carefully curated historical datasets**, ingested into the **Mikulski Archive for Space Telescopes (MAST)**, will unlock Roman’s full discovery potential. Together, these datasets form a **microlensing trifecta**—providing the **temporal**, **astrometric**, and **parallax** context Roman needs to convert detections into definitive physical measurements.
+## The Proposed Trifecta
 
-Rather than proposing a single massive archive ingestion, we demonstrate why **targeted, low‑cost, community‑curated datasets** outperform monolithic solutions in scientific return, accessibility, and mission readiness.
+### 1. OGLE–Gaia Long-Timescale Microlensing Seed Catalog
 
----
+Candidate identification and astrometric context for rare, long-duration events, including possible black-hole and neutron-star lenses.
 
-## Why Microlensing Needs History
+### 2. Spitzer Microlens Parallax Catalog
 
-Microlensing is fundamentally a **time‑integrated phenomenon**.
+Historical parallax measurements from a unique space-based observing geometry that can complement Roman astrometry.
 
-Key physical parameters—**lens mass, distance, and velocity**—are not fully constrained by any single observation. Long‑timescale events, especially those produced by massive dark lenses, unfold over years and often require **multi‑epoch, multi‑platform context** to resolve degeneracies.
+### 3. OGLE–KMTNet Trifecta Light-Curve Catalog
 
-- Ground‑based surveys such as **OGLE** and **KMTNet** provide long temporal baselines  
-- Space‑based missions such as **Spitzer** provide parallax leverage  
-- **Roman** will add precise **astrometric microlensing** measurements  
+Long-baseline and high-cadence light curves intended to improve temporal completeness and anomaly recovery.
 
-No one dataset is sufficient.  
-**Together, they are transformative.**
+## Why It Matters
 
----
+Microlensing is fundamentally time-integrated. No single observation or archive contains every quantity needed to constrain lens mass, distance, and velocity. Connecting historical surveys with Roman-era observations could make archival data an active component of discovery rather than passive storage.
 
-## Why Roman Needs Context
+## Project Status
 
-Roman will measure the **angular Einstein radius (θE)** for thousands of microlensing events—an ability unmatched by any previous mission. Yet **θE alone does not yield lens mass**.
+This repository presents a **community-authored research concept and infrastructure proposal**. It is not an official NASA, STScI, MAST, Roman mission, OGLE, KMTNet, Gaia, or Spitzer publication, endorsement, or data release.
 
-To determine mass definitively, Roman measurements must be paired with:
+Scientific claims, estimates, and proposed workflows should be independently reviewed and validated before research or operational use.
 
-- Historical microlens parallax (**πE**) data  
-- Long‑baseline light‑curve characterization  
-- Pre‑identified high‑priority candidates for dark remnants  
+## Rights and Use
 
-Without these inputs, Roman risks rediscovering candidates **without the ability to immediately confirm their nature**.
+This is a **source-visible, all-rights-reserved** project. It is not released under the MIT License.
 
-**Archives are not passive repositories.  
-They are active components of discovery.**
+Public access permits viewing, discussion, citation, and evaluation subject to applicable law. It does not grant permission to reproduce, redistribute, adapt, commercialize, train AI systems on, or create derivative works from the repository.
 
----
+See [`repository-standard/LICENSE`](repository-standard/LICENSE), [`COPYRIGHT.md`](repository-standard/COPYRIGHT.md), [`AI_POLICY.md`](repository-standard/AI_POLICY.md), and [`ATTRIBUTION.md`](repository-standard/ATTRIBUTION.md).
 
-## The Trifecta: Three Complementary Datasets
+## Attribution
 
-### 1. OGLE–Gaia Long‑Timescale Microlensing Seed Catalog  
-
-![Microlensing Pipeline](figures/microlensing_pipeline.svg)
-
-**Role:** Candidate identification and astrometric context  
-
-**Contribution:**
-- Identifies rare, long‑duration events (*tE ≳ 100–300 days*)  
-- Incorporates **Gaia** proper motions and parallaxes  
-- Flags high‑probability **black hole and neutron star** lenses  
-
-This dataset narrows Roman’s search space to the most physically informative events.
-
----
-
-### 2. Spitzer Microlens Parallax Catalog  
-
-![Spitzer Parallax Geometry](figures/spitzer_parallax_geometry.svg)
-
-**Role:** Mass degeneracy breaking  
-
-**Contribution:**
-- Provides **πE** measurements from a ~1 AU space‑based baseline  
-- Enables direct mass determination when combined with Roman **θE**  
-- Preserves a **unique, no‑longer‑repeatable observing geometry**  
-
-This dataset transforms Roman astrometry into **definitive mass measurements**.
-
----
-
-### 3. OGLE–KMTNet Trifecta Light‑Curve Catalog  
-
-![Trifecta Microlensing Flow](figures/trifecta_microlensing_flow.svg)
-
-**Role:** Temporal completeness and anomaly recovery  
-
-**Contribution:**
-- Combines long‑baseline **OGLE** monitoring with high‑cadence **KMTNet** coverage  
-- Recovers short‑duration features missed by single surveys  
-- Enables robust modeling of complex events  
-
-This dataset ensures Roman inherits a **science‑ready temporal record**, not fragmented light curves.
-
----
-
-## Why Three Small Datasets Beat One Massive One
-
-| Approach | Massive Ingestion | Trifecta Approach |
-|--------|------------------|------------------|
-| Cost | High | **Very Low** |
-| Review Complexity | Large | **Minimal** |
-| Community Reuse | Limited | **Broad** |
-| Scientific Focus | Diffuse | **Targeted** |
-| Time to Impact | Long | **Immediate** |
-
-Each dataset:
-- Is **< 1 GB**  
-- Is **public**  
-- Serves a **distinct, non‑redundant role**  
-- Aligns directly with Roman’s primary Galactic science goals  
-
-Together, they form **discovery infrastructure**, not a single‑use product.
-
----
-
-## Why Archives Matter as Much as Telescopes
-
-Roman’s success will not be measured solely by photons collected, but by:
-
-- How quickly discoveries can be validated  
-- How broadly the community can participate  
-- How effectively past and future missions are connected  
-
-MAST’s role is not just to store Roman data—but to **activate it**.
-
-By hosting these datasets as **High‑Level Science Products (HLSPs)**, MAST enables:
-
-- Immediate co‑analysis  
-- Reproducible workflows  
-- Democratized access to high‑impact science  
-
----
-
-## Community‑Driven Infrastructure Works
-
-This trifecta proposal was assembled by **two members of the public**—not as outsiders, but as engaged participants in the Roman science ecosystem.
-
-We believe that:
-- **Space science belongs to everyone**  
-- **Good data organization accelerates discovery**  
-- **Flagship missions are strongest when communities are included early**  
-
-These submissions are a small but concrete example of that philosophy in action.
-
----
-
-## Final Thought
-
-Some discoveries don’t happen because we look harder.
-
-**They happen because we connect what we already have.**
-
-This trifecta is about making those connections—so Roman can turn fleeting lensing events into a **lasting census of the invisible universe**.
-
-
-## License
-
-This project is released under the MIT License.  
-See the `LICENSE` file for details.
+Created by Bart Salazar and Brad Devowe. Repository direction and presentation maintained through Bart Salazar / Simple Minds Studios.
